@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet"  href="{{asset('../resources/css/bootstrap.min.css')}}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -35,6 +36,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -66,6 +68,12 @@
                                     </form>
                                 </div>
                             </li>
+                            
+                            <li class="nav-item dropdown">
+                                <a class="" href="#" role="button"  aria-expanded="false">
+                                    ver
+                                </a>
+                            </li>
                         @endguest
                     </ul>
                 </div>
@@ -76,5 +84,6 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{asset('../resources/js/bootstrap.bundle.min.js')}}"></script> 
 </body>
 </html>
