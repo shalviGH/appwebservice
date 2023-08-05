@@ -15,6 +15,15 @@ class productController extends Controller
         return response()->json($product, 200);
     }
 
+    public function products(){
+        //return response()->json(product::all(), 200);
+        $products = product::all();
+        //return response()->json($product, 200);
+        return view('product', compact('products'));
+    }
+
+
+
     public function show($id){
         //return response()->json(product::all(), 200);
         $product = product::find($id);
@@ -30,7 +39,20 @@ class productController extends Controller
         //return response()->json(product::all(), 200);
         $product = product::create($request->all());
         
-        return response($product);
+        //return response($product);
+
+
+       if(isset($request->val)){
+            
+            $products = product::all();
+            //return view('product', compact('products'));
+            return  redirect()->route('product.products');
+       }else{
+            return "se esta usuando mediante postman";
+       }
+
+      
+        
     }
 
     public function update(Request $request, $id){

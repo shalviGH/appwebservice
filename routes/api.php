@@ -29,3 +29,8 @@ Route::post('addProduct',[productController::class, 'insert']);
 Route::put('update/{id}',[productController::class, 'update']);
 
 Route::delete('delete/{id}',[productController::class, 'delete']);
+
+Route::post('product', [productController::class, 'insert'])->name('product.insert');
+Route::get('product', [productController::class, 'products'])->name('product.products');
+
+
